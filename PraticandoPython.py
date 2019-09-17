@@ -6,13 +6,13 @@ def somar(valor1, valor2):
         return 0
     else:
         try:
-            return a if b == 0 else somar(a ^ b, (a & b) << 1) if a < 0 else somar(b ^ a, (b & a) << 1)
+            return a if b == 0 else somar(a ^ b )
         except Exception:
-            a = ~valor1 + 1
-            b = ~valor2 + 1
+            a = ~valor1 >> 1
+            b = ~valor2 >> 1
             try:
                 resultado = a if b == 0 else somar(a ^ b, (a & b) << 1) if a < 0 else somar(b ^ a, (b & a) << 1)
-                return resultado * (-1)
+                return resultado * -1
             except Exception:
                 return '???????????'
 
@@ -38,4 +38,4 @@ def somaAutomatica():
 
 
 somaNaMao()
-somaAutomatica()
+
